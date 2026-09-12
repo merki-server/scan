@@ -1,1 +1,16 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<script>
+  const tg = window.Telegram.WebApp;
+  tg.ready();
+  tg.showScanQrPopup({ text: "Наведи на QR-код гостя" }, (result) => {
+    tg.sendData(result);   // відправляє токен боту і закриває міні-апп
+    return true;
+  });
+</script>
+</body>
+</html>
